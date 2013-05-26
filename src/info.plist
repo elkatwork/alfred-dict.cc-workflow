@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>dict.cc</string>
+	<key>connections</key>
+	<dict>
+		<key>A164F0AD-8869-40A1-857F-EB98EA06FECE</key>
+		<array/>
+	</dict>
+	<key>createdby</key>
+	<string>Thomas Hirsch</string>
+	<key>description</key>
+	<string>Online Dictionary English-German</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Dict.cc</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>t</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>/usr/bin/python dict.cc.py {query}</string>
+				<key>title</key>
+				<string>Translate EN/DE</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>A164F0AD-8869-40A1-857F-EB98EA06FECE</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>A164F0AD-8869-40A1-857F-EB98EA06FECE</key>
+		<dict>
+			<key>ypos</key>
+			<real>10</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string></string>
+</dict>
+</plist>
