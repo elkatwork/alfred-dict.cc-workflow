@@ -4,6 +4,7 @@
 import urllib2, urllib
 import re
 import sys
+import string
 
 # Edit here for default number of results
 MAX_RESULTS = 20
@@ -21,7 +22,6 @@ class Dict:
 
     # Find 'var c1Arr' and 'var c2Arr'
     def parseResponse(self):
-
         self.engWords = []
         self.deWords = []
 
@@ -39,14 +39,11 @@ class Dict:
         if not engLine or not deLine:
             return False
 
-        else:
-            # Regex
-            # pattern = "\"[A-Za-z \.()\-\?ßäöüÄÖÜéáíçÇâêî\']*\""
-            pattern = "\"[^,]+\""
+        pattern = "\"[^,]+\""
 
-            # Return list of matching strings
-            self.engWords = re.findall(pattern, engLine)
-            self.deWords = re.findall(pattern, deLine)
+        # Return list of matching strings
+        self.engWords = map(self.sanitizeWord, re.findall(pattern, engLine))
+        self.deWords = map(self.sanitizeWord, re.findall(pattern, deLine))
 
     def getOutputLength(self):
         # Get minumum number of both eng and de
@@ -68,7 +65,7 @@ class Dict:
 
         if not self.engWords or not self.deWords:
             print "<item valid=\"no\">"
-            print "<title>%s not found</title>" % expression
+            print "<title>'%s' not found</title>" % string.strip(expression)
             print "<icon>de_en.png</icon>"
             print "</item>"
 
@@ -78,21 +75,24 @@ class Dict:
             for word_idx in range(minWords):
                 if self.engWords[word_idx] == "\"\"": continue
                 print "<item>"
-                print "<title>%s</title>" % self.engWords[word_idx].strip("\"")
-                print "<subtitle>%s</subtitle>" % self.deWords[word_idx].strip("\"")
+                print "<title>%s</title>" % self.engWords[word_idx]
+                print "<subtitle>%s</subtitle>" % self.deWords[word_idx]
                 print "<icon>de_en.png</icon>"
                 print "</item>"
 
         print "</items>"
+
+    def sanitizeWord(self, word):
+        word = word.replace("\\", "")
+        return word.strip("\" ")
 
 
 if __name__ == "__main__":
     expression = ""
     for index in range(1, len(sys.argv)):
         expression += sys.argv[index] + " "
-    expression = urllib.quote(expression)
 
     myDict = Dict()
-    myDict.getResponse(expression)
+    myDict.getResponse(urllib.quote(expression))
     myDict.parseResponse()
     myDict.printXMLResults(expression)
