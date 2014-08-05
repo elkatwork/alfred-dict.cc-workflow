@@ -16,7 +16,7 @@ class Dict:
 
     def getResponse(self, word):
         # Trick to avoid dict.cc from denying the request: change User-agent to firefox's
-        req = urllib2.Request("http://www.dict.cc/?s="+word, None, {'User-agent': 'Mozilla/5.0'})
+        req = urllib2.Request("http://www.dict.cc/?s="+word, None, {'User-agent': 'Mozilla/6.0'})
         f = urllib2.urlopen(req)
         self.Response = f.read()
 
