@@ -4,10 +4,29 @@
 <dict>
 	<key>bundleid</key>
 	<string>dict.cc</string>
+	<key>category</key>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>A164F0AD-8869-40A1-857F-EB98EA06FECE</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CCF9AC17-8E90-47B6-B9FB-C344E160ADF0</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>77DC6F16-F750-4C99-B55A-6897C2DF97AD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Thomas Hirsch</string>
@@ -27,7 +46,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
-				<string>t</string>
+				<string>dict</string>
 				<key>runningsubtext</key>
 				<string>Please wait...</string>
 				<key>script</key>
@@ -43,16 +62,66 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>A164F0AD-8869-40A1-857F-EB98EA06FECE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>CCF9AC17-8E90-47B6-B9FB-C344E160ADF0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Copied "{query}" to clipboard</string>
+				<key>title</key>
+				<string>dict.cc</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>77DC6F16-F750-4C99-B55A-6897C2DF97AD</string>
+			<key>version</key>
+			<integer>0</integer>
 		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>77DC6F16-F750-4C99-B55A-6897C2DF97AD</key>
+		<dict>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
 		<key>A164F0AD-8869-40A1-857F-EB98EA06FECE</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>20</real>
+		</dict>
+		<key>CCF9AC17-8E90-47B6-B9FB-C344E160ADF0</key>
+		<dict>
+			<key>ypos</key>
+			<real>20</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
