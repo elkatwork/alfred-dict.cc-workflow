@@ -8,4 +8,4 @@ based on the dict.cc.py script by [raaapha](https://github.com/raaapha/dict.cc.p
 Usage
 -----
 
-* `translate word`
+* `dict word`
